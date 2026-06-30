@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Phishing Awareness Training Module | CodeAlpha</title>
+<meta name="description" content="Interactive cybersecurity training module teaching phishing detection and social engineering awareness.">
+<link rel="stylesheet" href="style.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<!-- ===================== NAVBAR ===================== -->
+<header class="navbar" id="navbar">
+  <div class="nav-container">
+    <a href="#welcome" class="nav-logo">
+      <span class="logo-icon">🛡️</span>
+      <span>PhishGuard<span class="logo-accent">Training</span></span>
+    </a>
+    <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation menu">
+      <span></span><span></span><span></span>
+    </button>
+    <nav class="nav-links" id="navLinks">
+      <a href="#welcome" class="nav-link">Welcome</a>
+      <a href="#social-engineering" class="nav-link">Social Engineering</a>
+      <a href="#spot-the-phish" class="nav-link">Spot the Phish</a>
+      <a href="#quiz" class="nav-link">Interactive Quiz</a>
+    </nav>
+  </div>
+</header>
+
+<!-- ===================== HERO / WELCOME ===================== -->
+<section id="welcome" class="section hero">
+  <div class="container hero-grid">
+    <div class="hero-text">
+      <span class="badge-pill">CodeAlpha Cybersecurity Internship task 2</span>
+      <h1>Phishing Awareness <span class="text-accent">Training Module</span></h1>
+      <p class="hero-sub">
+ Phishing is a type of online scam where criminals pretend to 
+ be trusted people or companies, such as banks, online services,
+  or coworkers. They try to trick you into sharing your password, bank details, or 
+  downloading harmful software. Always check emails, messages, and links carefully before clicking.
+      </p>
+      <div class="hero-actions">
+        <a href="#social-engineering" class="btn btn-primary">Start Learning</a>
+        <a href="#quiz" class="btn btn-outline">Take the Quiz</a>
+      </div>
+    </div>
+    <div class="hero-visual" aria-hidden="true">
+      <div class="hero-card">
+        <div class="hero-card-row"><span class="dot dot-red"></span><span class="dot dot-yellow"></span><span class="dot dot-green"></span></div>
+        <div class="hero-line w-80"></div>
+        <div class="hero-line w-60"></div>
+        <div class="hero-line w-90 alert-line">⚠ Suspicious link detected</div>
+        <div class="hero-line w-40"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== SOCIAL ENGINEERING ===================== -->
+<section id="social-engineering" class="section alt-bg">
+  <div class="container">
+    <h2 class="section-title">Understanding Social Engineering</h2>
+    <p class="section-intro">
+    
+      Attackers usually do not hack computers directly they <strong>trick people</strong> instead. Phishing emails use
+       emotions like fear, excitement, or urgency to make you act without thinking.
+        Learning to recognize these tricks is the best way to protect yourself.
+
+Always take a moment to check who sent the message before clicking any links
+ or attachments. If something looks suspicious or too good to be true, it is safer to ignore it or verify it
+  with the sender.
+
+
+    </p>
+
+    <div class="trigger-grid">
+      <div class="trigger-card">
+        <div class="trigger-icon icon-urgency">⏱️</div>
+        <h3>Urgency</h3>
+        <p>"Act within 24 hours or your account will be suspended." Pressure to act fast prevents victims from verifying legitimacy.</p>
+      </div>
+      <div class="trigger-card">
+        <div class="trigger-icon icon-fear">⚠️</div>
+        <h3>Fear</h3>
+        <p>"Unauthorized login detected on your account." Fear of loss or compromise triggers panic-driven clicks.</p>
+      </div>
+      <div class="trigger-card">
+        <div class="trigger-icon icon-authority">🏛️</div>
+        <h3>Authority</h3>
+        <p>Impersonating IT departments, banks, or executives exploits our natural tendency to comply with authority figures.</p>
+      </div>
+      <div class="trigger-card">
+        <div class="trigger-icon icon-scarcity">🎯</div>
+        <h3>Scarcity</h3>
+        <p>"Only 2 spots left — claim your refund now." Limited-time framing pushes victims to bypass due diligence.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== SPOT THE PHISH ===================== -->
+<section id="spot-the-phish" class="section">
+  <div class="container">
+    <h2 class="section-title">Spot the Red Flags</h2>
+    <p class="section-intro">
+      Below is a realistic phishing email mockup. <strong>Click on the highlighted zones</strong>
+      to reveal why each element is a structural red flag. On desktop, hovering will also preview the tooltip.
+    </p>
+
+    <div class="email-mockup-wrapper">
+      <!-- Mock Email Client -->
+      <div class="email-client">
+        <div class="email-client-header">
+          <span class="dot dot-red"></span><span class="dot dot-yellow"></span><span class="dot dot-green"></span>
+          <span class="email-client-title">Inbox — Suspicious Message</span>
+        </div>
+
+        <div class="email-meta">
+          <!-- Red Flag 1: Sender Domain -->
+          <div class="email-field flag-target" data-flag="sender" tabindex="0" role="button" aria-describedby="tooltip-sender">
+            <span class="field-label">From:</span>
+            <span class="field-value">Netflix Support &lt;support@netflix-billing-secure.com&gt;</span>
+            <span class="flag-marker">🚩</span>
+          </div>
+
+          <div class="email-field">
+            <span class="field-label">To:</span>
+            <span class="field-value">you@example.com</span>
+          </div>
+
+          <div class="email-field">
+            <span class="field-label">Subject:</span>
+            <!-- Red Flag 3 is inside subject/body urgency language -->
+            <span class="field-value flag-target" data-flag="urgency" tabindex="0" role="button" aria-describedby="tooltip-urgency">
+              ⚠ Action Required: Your Account Will Be Suspended in 24 Hours <span class="flag-marker">🚩</span>
+            </span>
+          </div>
+        </div>
+
+        <div class="email-body">
+          <!-- Red Flag 2: Generic Greeting -->
+          <p class="flag-target" data-flag="greeting" tabindex="0" role="button" aria-describedby="tooltip-greeting">
+            Dear Valued Customer, <span class="flag-marker">🚩</span>
+          </p>
+
+          <p>
+            We detected unusual billing activity on your Netflix account. To avoid permanent suspension,
+            you must verify your payment information immediately. Failure to respond within
+            <strong>24 hours</strong> will result in permanent account closure.
+          </p>
+
+          <p style="text-align:center; margin: 24px 0;">
+            <!-- Red Flag 4: Suspicious Link -->
+            <a href="#" class="fake-cta flag-target" data-flag="link" tabindex="0" role="button" aria-describedby="tooltip-link" onclick="return false;">
+              Verify My Account Now
+            </a>
+          </p>
+
+          <p>Thank you for being a Netflix member.<br>The Netflix Security Team</p>
+        </div>
+      </div>
+
+      <!-- Tooltip / explanation panel (shown on click/hover via JS) -->
+      <div class="flag-panel" id="flagPanel">
+        <div class="flag-panel-empty" id="flagPanelEmpty">
+          👆 Click any flagged (🚩) element in the email to learn why it's suspicious.
+        </div>
+        <div class="flag-panel-content" id="flagPanelContent" hidden>
+          <h4 id="flagTitle"></h4>
+          <p id="flagDesc"></p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Hidden data templates for tooltips, read by JS -->
+    <template id="tooltip-sender">
+      <h4>🚩 Mismatched Sender Domain</h4>
+      <p>The email claims to be from Netflix, but the domain <code>netflix-billing-secure.com</code> is NOT an official Netflix domain. Always check the actual address after the "@" symbol, not just the display name.</p>
+    </template>
+    <template id="tooltip-greeting">
+      <h4>🚩 Generic Greeting</h4>
+      <p>Legitimate companies you have an account with typically address you by name. "Dear Valued Customer" signals a mass-distributed phishing attempt rather than a personalized, verified communication.</p>
+    </template>
+    <template id="tooltip-urgency">
+      <h4>🚩 Urgent / Threatening Language</h4>
+      <p>Phrases like "Action Required" and "24 Hours" are designed to trigger panic and rush you into clicking before you think critically or verify the claim through official channels.</p>
+    </template>
+    <template id="tooltip-link">
+      <h4>🚩 Suspicious Hyperlink Destination</h4>
+      <p>Hover over any link before clicking — the visible text can say anything, but the actual underlying URL may point to a fraudulent domain designed to harvest your credentials. Never trust a CTA button text alone.</p>
+    </template>
+
+    <!-- ===================== DEFENSIVE CHECKLIST ===================== -->
+    <div class="checklist-card">
+      <h3>🛡️ Defensive Checklist: 4 Actionable Best Practices</h3>
+      <ul class="checklist">
+        <li><span class="check-icon">✔</span><div><strong>Verify the channel.</strong> If an email asks for urgent action, contact the company directly using a phone number or website you already trust — never a link or number provided in the email itself.</div></li>
+        <li><span class="check-icon">✔</span><div><strong>Enable Multi-Factor Authentication (MFA).</strong> Even if your password is stolen, MFA adds a critical second barrier attackers usually can't bypass.</div></li>
+        <li><span class="check-icon">✔</span><div><strong>Analyze links before clicking.</strong> Hover to preview the destination URL, and check for misspellings, extra subdomains, or unfamiliar top-level domains.</div></li>
+        <li><span class="check-icon">✔</span><div><strong>Slow down under pressure.</strong> Urgency is a manufactured tactic. Legitimate organizations rarely demand instant action via email — pause and verify before acting.</div></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== INTERACTIVE QUIZ ===================== -->
+<section id="quiz" class="section alt-bg">
+  <div class="container">
+    <h2 class="section-title">Interactive Phishing Quiz</h2>
+    <p class="section-intro">Test your knowledge with 4 real-world scenarios. Select an answer and submit to see instant feedback and explanations.</p>
+
+    <div class="quiz-wrapper" id="quizWrapper">
+
+      <!-- Progress -->
+      <div class="quiz-progress">
+        <div class="quiz-progress-bar">
+          <div class="quiz-progress-fill" id="progressFill"></div>
+        </div>
+        <span id="progressText">Question 1 of 4</span>
+      </div>
+
+      <!-- Active Question Card -->
+      <div class="quiz-card" id="quizCard">
+        <!-- populated dynamically by JS -->
+      </div>
+
+      <!-- Completion Screen -->
+      <div class="quiz-complete" id="quizComplete" hidden>
+        <div class="badge-result" id="badgeResult">🏆</div>
+        <h3 id="completeTitle">Training Complete!</h3>
+        <p id="completeScore"></p>
+        <p class="status-badge" id="statusBadge"></p>
+        <button class="btn btn-primary" id="restartQuiz">Retake Quiz</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== FOOTER ===================== -->
+<footer class="footer">
+  <div class="container footer-grid">
+    <p>🛡️ PhishGuard Training Module — Built for the CodeAlpha Cybersecurity Internship.</p>
+    <p class="footer-sub">For educational awareness purposes only. Stay vigilant, stay secure.</p>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
